@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/[[...slug]].ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/auth/register.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/auth/login.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/auth/profile.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/auth/verify.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/auth/register",
+      "dest": "/api/auth/register.ts"
+    },
+    {
+      "src": "/api/auth/login",
+      "dest": "/api/auth/login.ts"
+    },
+    {
+      "src": "/api/auth/profile",
+      "dest": "/api/auth/profile.ts"
+    },
+    {
+      "src": "/api/auth/verify",
+      "dest": "/api/auth/verify.ts"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/[[...slug]].ts"
+    },
+    {
+      "src": "/health",
+      "dest": "/api/[[...slug]].ts"
+    },
+    {
+      "src": "/test",
+      "dest": "/api/[[...slug]].ts"
+    },
+    {
+      "src": "/",
+      "dest": "/api/[[...slug]].ts"
+    }
+  ],
+  "env": {
+    "CORS_ORIGINS": "http://localhost:8080,https://mmeraki1.netlify.app,https://*.netlify.app,https://*.vercel.app,https://mmeraki-backend1.vercel.app"
+  }
+}
