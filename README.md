@@ -151,10 +151,5 @@ curl -X POST "https://mmeraki-backend1.vercel.app/api/orders" \
 - Firebase Auth: https://firebase.google.com/products/auth
 - Vercel: https://vercel.com/
 
-**Notes & Next Steps**
-- If you want, I can:
-  - export a Postman collection JSON for you
-  - add a `README.md` to repository root in addition to this `readme/README.md`
-  - create example `.env.local` for local testing
 
 ---
